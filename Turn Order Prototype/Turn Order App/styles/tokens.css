@@ -1,0 +1,291 @@
+/* =========================================================================
+   Greg Bilyk — Color & Type Foundations
+   Palette derived from a Brooklyn typographic-map poster:
+   deep navy, warm cream, hot magenta, coral orange.
+   ========================================================================= */
+
+/* ---------- FONTS ---------- */
+/* Display: Montserrat (geometric sans, strong personality at large sizes) */
+/* Body:    Mona Sans   (variable, neutral, excellent at small sizes)      */
+/* Loaded via Google Fonts CDN — drop self-hosted .ttf/.woff2 files in     */
+/* fonts/ and uncomment the @font-face blocks below to ship offline.       */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap");
+
+:root {
+  /* ===== RAW COLOR TOKENS ===== */
+
+  /* Ink — the deep navy-charcoal pulled from the poster background */
+  --ink-950: #0e1622;
+  --ink-900: #141d2b;
+  --ink-800: #1a2332;
+  --ink-700: #243044;
+  --ink-600: #2f3d54;
+  --ink-500: #475066;
+  --ink-400: #6b7388;
+  --ink-300: #98a0b3;
+  --ink-200: #c7ccd6;
+  --ink-100: #e5e7ee;
+
+  /* Paper — the warm cream of the poster matte */
+  --paper-50:  #fffaf2;
+  --paper-100: #fbf3e4;
+  --paper-200: #f5ead8;
+  --paper-300: #ecdcc4;
+  --paper-400: #d9c6ac;
+  --paper-500: #b29c80;
+
+  /* Magenta — the hot pink in BEDFORD/SHEEPSHEAD */
+  --magenta-50:  #fdeef3;
+  --magenta-100: #fad0de;
+  --magenta-200: #f3a3bd;
+  --magenta-300: #e6739a;
+  --magenta-400: #d44a7c;
+  --magenta-500: #b42460;   /* primary */
+  --magenta-600: #951a4f;
+  --magenta-700: #74143e;
+  --magenta-800: #560f2d;
+  --magenta-900: #3a0a1f;
+
+  /* Coral — the bright orange in CONEY/BOROUGH PARK */
+  --coral-50:  #fff1ec;
+  --coral-100: #ffd9cb;
+  --coral-200: #ffb89d;
+  --coral-300: #fc9472;
+  --coral-400: #f06c48;   /* primary */
+  --coral-500: #db4f29;
+  --coral-600: #b53e1f;
+  --coral-700: #8c2f17;
+  --coral-800: #602010;
+  --coral-900: #3d140a;
+
+  /* ===== SEMANTIC COLOR TOKENS — LIGHT (default) ===== */
+  --bg:           var(--paper-50);
+  --bg-elevated: #ffffff;
+  --bg-sunken:    var(--paper-100);
+  --bg-inverse:   var(--ink-900);
+
+  --surface:      #ffffff;
+  --surface-2:    var(--paper-100);
+  --surface-3:    var(--paper-200);
+
+  --fg-1:         var(--ink-900);   /* primary text */
+  --fg-2:         var(--ink-700);   /* secondary text */
+  --fg-3:         var(--ink-500);   /* tertiary / meta */
+  --fg-4:         var(--ink-400);   /* disabled / very subtle */
+  --fg-on-accent: #ffffff;
+  --fg-on-dark:   var(--paper-100);
+
+  --accent:        var(--magenta-500);
+  --accent-hover:  var(--magenta-600);
+  --accent-press:  var(--magenta-700);
+  --accent-soft:   var(--magenta-50);
+
+  --accent-2:        var(--coral-400);
+  --accent-2-hover:  var(--coral-500);
+  --accent-2-press:  var(--coral-600);
+  --accent-2-soft:   var(--coral-50);
+
+  --border-1: rgba(20, 29, 43, 0.08);
+  --border-2: rgba(20, 29, 43, 0.14);
+  --border-3: rgba(20, 29, 43, 0.22);
+  --focus-ring: var(--magenta-500);
+
+  --success: #2f8a5a;
+  --warning: #c98a14;
+  --danger:  #b53e1f;
+
+  /* ===== SHADOWS ===== */
+  --shadow-xs: 0 1px 2px rgba(14, 22, 34, 0.06);
+  --shadow-sm: 0 2px 6px rgba(14, 22, 34, 0.08);
+  --shadow-md: 0 8px 24px rgba(14, 22, 34, 0.10);
+  --shadow-lg: 0 24px 60px rgba(14, 22, 34, 0.16);
+  --shadow-press: inset 0 1px 2px rgba(14, 22, 34, 0.10);
+
+  /* ===== RADII ===== */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* ===== SPACING (4px base) ===== */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  /* ===== TYPE ===== */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Mona Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* Weights */
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semibold: 600;
+  --w-bold:     700;
+  --w-black:    800;
+
+  /* Letter-spacing — Montserrat is geometric; tighten at display sizes */
+  --ls-display: -0.025em;
+  --ls-h1:      -0.02em;
+  --ls-h2:      -0.015em;
+  --ls-body:     0em;
+  --ls-eyebrow:  0.14em;
+
+  /* Type scale (modular, ~1.25 with breaks for display) */
+  --fs-display: clamp(56px, 8vw, 128px);
+  --fs-h1:      clamp(40px, 5.2vw, 72px);
+  --fs-h2:      clamp(30px, 3.4vw, 44px);
+  --fs-h3:      28px;
+  --fs-h4:      22px;
+  --fs-lead:    20px;
+  --fs-body:    17px;
+  --fs-small:   15px;
+  --fs-meta:    13px;
+  --fs-eyebrow: 12px;
+
+  /* Motion — snappy, confident */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 520ms;
+}
+
+/* ===== DARK MODE ===== */
+:root[data-theme="dark"],
+:root.dark {
+  --bg:          var(--ink-950);
+  --bg-elevated: var(--ink-900);
+  --bg-sunken:   #08101a;
+  --bg-inverse:  var(--paper-100);
+
+  --surface:   var(--ink-900);
+  --surface-2: var(--ink-800);
+  --surface-3: var(--ink-700);
+
+  --fg-1: var(--paper-100);
+  --fg-2: var(--paper-300);
+  --fg-3: var(--ink-300);
+  --fg-4: var(--ink-400);
+  --fg-on-accent: #ffffff;
+  --fg-on-dark:   var(--paper-100);
+
+  --accent:       var(--magenta-400);
+  --accent-hover: var(--magenta-300);
+  --accent-press: var(--magenta-500);
+  --accent-soft:  rgba(212, 74, 124, 0.16);
+
+  --accent-2:       var(--coral-300);
+  --accent-2-hover: var(--coral-200);
+  --accent-2-press: var(--coral-400);
+  --accent-2-soft:  rgba(252, 148, 114, 0.14);
+
+  --border-1: rgba(245, 234, 216, 0.08);
+  --border-2: rgba(245, 234, 216, 0.14);
+  --border-3: rgba(245, 234, 216, 0.22);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== SEMANTIC ELEMENT STYLES ===== */
+html { color-scheme: light dark; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--fg-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.display, h1.display {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: var(--fs-display);
+  line-height: 0.92;
+  letter-spacing: var(--ls-display);
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: var(--fs-h1);
+  line-height: 1.02;
+  letter-spacing: var(--ls-h1);
+  text-wrap: balance;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+  letter-spacing: var(--ls-h2);
+  text-wrap: balance;
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  font-size: var(--fs-h3);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+h4, .h4 {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  font-size: var(--fs-h4);
+  line-height: 1.25;
+}
+
+p, .body { font-size: var(--fs-body); line-height: 1.6; color: var(--fg-1); }
+.lead    { font-size: var(--fs-lead); line-height: 1.5; color: var(--fg-2); }
+.small   { font-size: var(--fs-small); line-height: 1.5; color: var(--fg-2); }
+.meta    { font-size: var(--fs-meta); line-height: 1.4; color: var(--fg-3); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--w-semibold);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--surface-2);
+  padding: 0.12em 0.35em;
+  border-radius: var(--r-xs);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+  transition: color var(--dur-1) var(--ease-out);
+}
+a:hover { color: var(--accent-hover); }
+
+::selection { background: var(--magenta-200); color: var(--ink-900); }
+:root[data-theme="dark"] ::selection { background: var(--magenta-500); color: var(--paper-50); }

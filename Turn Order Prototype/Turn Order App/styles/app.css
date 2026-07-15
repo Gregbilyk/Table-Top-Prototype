@@ -1,0 +1,227 @@
+/* =========================================================================
+   TableTop — minimal turn-order app
+   Built on the Greg Bilyk tokens. Adds: rose accent override, go/stop
+   (green/red) turn states, editorial numeral type, phone-canvas chrome.
+   ========================================================================= */
+
+:root {
+  /* chosen brand accent — rose (used for brand marks, links, primary CTAs) */
+  --accent:       #e8536f;
+  --accent-hover: #d8455f;
+  --accent-press: #c33a52;
+  --accent-soft:  #fdecef;
+  --focus-ring:   #e8536f;
+
+  /* turn states — the heart of the app */
+  --go:        #1cae74;   /* green — active player, ready to end turn */
+  --go-deep:   #169a65;
+  --go-soft:   #e4f6ee;
+  --stop:      #e8536f;   /* red — handing off / next player */
+  --stop-deep: #d8455f;
+  --stop-soft: #fdecef;
+
+  /* page backdrop behind the screen */
+  --backdrop:  #e9e6e0;
+  --canvas:    var(--paper-50);
+}
+
+:root[data-theme="dark"] {
+  --accent:       #f0657e;
+  --accent-hover: #f47e92;
+  --accent-press: #e8536f;
+  --accent-soft:  rgba(240, 101, 126, 0.16);
+  --focus-ring:   #f0657e;
+
+  --go:        #2ed68f;
+  --go-deep:   #25c081;
+  --go-soft:   rgba(46, 214, 143, 0.14);
+  --stop:      #f0657e;
+  --stop-deep: #e8536f;
+  --stop-soft: rgba(240, 101, 126, 0.16);
+
+  --backdrop:  #07090d;
+  --canvas:    var(--ink-950);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--backdrop);
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+/* ---------- the app canvas (no device bezel — just the screen) ---------- */
+.canvas {
+  position: relative;
+  width: 400px;
+  height: 858px;
+  background: var(--canvas);
+  border-radius: 46px;
+  overflow: hidden;
+  box-shadow: 0 40px 90px -30px rgba(14, 22, 34, 0.45),
+              0 2px 0 rgba(255,255,255,0.5) inset;
+  display: flex;
+  flex-direction: column;
+}
+:root[data-theme="dark"] .canvas {
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.8),
+              0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 26px;
+}
+
+/* ---------- type helpers ---------- */
+.numeral {
+  font-family: var(--font-display);
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums lining-nums;
+  line-height: 1;
+  color: var(--fg-1);
+}
+.kicker {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.hairline { height: 1px; background: var(--border-2); border: 0; width: 100%; }
+
+/* ---------- top bar (wordmark + theme toggle) ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+.wordmark .dot { color: var(--accent); }
+
+.iconbtn {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  background: transparent;
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: all var(--dur-2) var(--ease-out);
+  flex-shrink: 0;
+}
+.iconbtn:hover { border-color: var(--border-3); color: var(--fg-1); }
+.iconbtn:active { transform: scale(0.94); }
+.iconbtn svg { width: 18px; height: 18px; }
+
+/* ---------- buttons ---------- */
+.btn {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 0;
+  border-radius: var(--r-pill);
+  padding: 16px 22px;
+  cursor: pointer;
+  transition: all var(--dur-2) var(--ease-out);
+  width: 100%;
+  white-space: nowrap;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-primary:active { background: var(--accent-press); transform: scale(0.985); }
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-1);
+  border: 1px solid var(--border-2);
+}
+.btn-ghost:hover { border-color: var(--border-3); background: var(--surface-2); }
+.btn-ghost:active { transform: scale(0.985); }
+.btn:disabled { opacity: 0.4; cursor: default; }
+
+.linkbtn {
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--font-body); font-size: 13px; color: var(--fg-3);
+  letter-spacing: 0.01em; padding: 6px;
+  transition: color var(--dur-2) var(--ease-out);
+}
+.linkbtn:hover { color: var(--accent); }
+
+/* ---------- minimal underline input ---------- */
+.field { display: flex; flex-direction: column; gap: 9px; }
+.field label { color: var(--fg-3); }
+.uline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid var(--border-2);
+  padding: 6px 2px 10px;
+  outline: none;
+  width: 100%;
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.uline::placeholder { color: var(--fg-4); font-weight: 200; }
+.uline:focus { border-color: var(--accent); }
+
+/* ---------- index row (01 02 03 …) ---------- */
+.indexrow {
+  display: flex;
+  align-items: baseline;
+  gap: 13px;
+  overflow: hidden;
+}
+.idx {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--fg-4);
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-2) var(--ease-out);
+}
+.idx.is-current { color: var(--fg-1); font-weight: 400; }
+.idx.is-done { color: var(--fg-4); opacity: 0.5; }
+
+/* ---------- focus ---------- */
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+/* status bar faux */
+.statusbar {
+  height: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: -8px; margin-bottom: 10px;
+}
+.statusbar .notch {
+  width: 86px; height: 5px; border-radius: 3px;
+  background: var(--fg-4); opacity: 0.4;
+}

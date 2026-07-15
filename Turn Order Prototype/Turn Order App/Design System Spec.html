@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Greg Bilyk — Design System</title>
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/spec.css" />
+</head>
+<body>
+
+<!-- ===================== PAGE 1 — COVER ===================== -->
+<section class="page ink" data-screen-label="Cover">
+  <div style="display:flex; align-items:center; justify-content:space-between;">
+    <svg viewBox="0 0 300 80" width="190" role="img" aria-label="Greg Bilyk">
+      <text x="0" y="56" style="font-family:var(--font-display); font-weight:800; font-size:46px; fill:var(--paper-100);">Greg Bilyk</text>
+      <circle cx="247" cy="58" r="6" fill="var(--magenta-400)"></circle>
+    </svg>
+    <span class="eyebrow" style="color:var(--coral-300);">Design System</span>
+  </div>
+
+  <div style="margin-top:auto; margin-bottom:8px;">
+    <div class="eyebrow" style="color:var(--coral-300); margin-bottom:20px;">The source of truth for type, color, motion &amp; components</div>
+    <h1 style="font-family:var(--font-display); font-weight:800; font-size:78px; line-height:0.9; letter-spacing:-0.03em; margin:0; color:var(--paper-50);">Design<br/>system<span style="color:var(--magenta-400);">.</span></h1>
+    <p class="lead" style="color:var(--paper-300); max-width:62%; margin-top:24px;">Crafting meaningful digital experiences. A personal brand system anchored on a Brooklyn typographic palette — deep ink, warm paper, hot magenta, coral orange.</p>
+  </div>
+
+  <!-- palette ribbon -->
+  <div style="display:flex; height:54px; border-radius:10px; overflow:hidden; margin-top:30px;">
+    <div style="flex:1; background:var(--ink-800);"></div>
+    <div style="flex:1; background:var(--paper-100);"></div>
+    <div style="flex:1; background:var(--magenta-500);"></div>
+    <div style="flex:1; background:var(--coral-400);"></div>
+  </div>
+
+  <div class="foot">
+    <span>Greg Bilyk · Product &amp; UX Designer</span>
+    <span class="page-num" style="color:var(--paper-300);">01</span>
+  </div>
+</section>
+
+<!-- ===================== PAGE 2 — FOUNDATIONS / CONTENTS ===================== -->
+<section class="page" data-screen-label="Overview">
+  <div class="page-head">
+    <div><span class="eyebrow">Overview</span><h2>Foundations</h2></div>
+    <span class="page-num">02</span>
+  </div>
+
+  <p class="lead" style="margin-top:0; max-width:90%;">This system powers a dynamic portfolio and any supporting collateral with one cohesive brand. Editorial restraint — type and color carry the personality, never decoration.</p>
+
+  <div class="cols-2" style="margin-top:30px;">
+    <div class="stack" style="gap:18px;">
+      <div>
+        <div class="section-label">Contents</div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <div class="swatch-line" style="justify-content:space-between;"><span>Color — raw scales</span><span class="page-num">03</span></div>
+          <div style="border-top:1px solid var(--border-1);"></div>
+          <div class="swatch-line" style="justify-content:space-between;"><span>Color — semantic tokens</span><span class="page-num">04</span></div>
+          <div style="border-top:1px solid var(--border-1);"></div>
+          <div class="swatch-line" style="justify-content:space-between;"><span>Typography</span><span class="page-num">05</span></div>
+          <div style="border-top:1px solid var(--border-1);"></div>
+          <div class="swatch-line" style="justify-content:space-between;"><span>Spacing, radii &amp; motion</span><span class="page-num">06</span></div>
+          <div style="border-top:1px solid var(--border-1);"></div>
+          <div class="swatch-line" style="justify-content:space-between;"><span>Components</span><span class="page-num">07</span></div>
+          <div style="border-top:1px solid var(--border-1);"></div>
+          <div class="swatch-line" style="justify-content:space-between;"><span>Voice &amp; content</span><span class="page-num">08</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack" style="gap:14px;">
+      <div class="section-label">Principles</div>
+      <div class="demo-card"><strong style="font-family:var(--font-display);">Editorial restraint</strong><p class="note" style="margin:5px 0 0;">Solid backgrounds, no gradients or patterns. Let the type carry it.</p></div>
+      <div class="demo-card"><strong style="font-family:var(--font-display);">Snappy &amp; confident</strong><p class="note" style="margin:5px 0 0;">200ms default motion, ease-out. No bouncing, no slow fades.</p></div>
+      <div class="demo-card"><strong style="font-family:var(--font-display);">Systematic color</strong><p class="note" style="margin:5px 0 0;">Four families, fixed scale steps. Never invent a new hue.</p></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Foundations</span></div>
+</section>
+
+<!-- ===================== PAGE 3 — COLOR SCALES ===================== -->
+<section class="page" data-screen-label="Color scales">
+  <div class="page-head">
+    <div><span class="eyebrow">Color</span><h2>Raw scales</h2></div>
+    <span class="page-num">03</span>
+  </div>
+
+  <div class="section-label">Ink — deep navy ground &amp; primary text</div>
+  <div class="scale" style="margin-bottom:22px;">
+    <div class="chip dark" style="background:#0e1622;"><span class="n">950</span><span class="h">#0e1622</span></div>
+    <div class="chip dark" style="background:#141d2b;"><span class="n">900</span><span class="h">#141d2b</span></div>
+    <div class="chip dark tag" data-tag="text" style="background:#1a2332;"><span class="n">800</span><span class="h">#1a2332</span></div>
+    <div class="chip dark" style="background:#2f3d54;"><span class="n">600</span><span class="h">#2f3d54</span></div>
+    <div class="chip dark" style="background:#475066;"><span class="n">500</span><span class="h">#475066</span></div>
+    <div class="chip dark" style="background:#6b7388;"><span class="n">400</span><span class="h">#6b7388</span></div>
+    <div class="chip light" style="background:#98a0b3;"><span class="n">300</span><span class="h">#98a0b3</span></div>
+    <div class="chip light" style="background:#c7ccd6;"><span class="n">200</span><span class="h">#c7ccd6</span></div>
+    <div class="chip light" style="background:#e5e7ee;"><span class="n">100</span><span class="h">#e5e7ee</span></div>
+    <div class="chip light" style="background:#f4f5f8;"><span class="n">50</span><span class="h">tint</span></div>
+  </div>
+
+  <div class="cols-2">
+    <div>
+      <div class="section-label">Magenta — primary accent</div>
+      <div class="scale" style="grid-template-columns:repeat(5,1fr);">
+        <div class="chip dark" style="background:#fdeef3;"><span class="n" style="color:var(--ink-800)">50</span></div>
+        <div class="chip dark" style="background:#f3a3bd;"><span class="n" style="color:var(--ink-800)">200</span></div>
+        <div class="chip dark" style="background:#e6739a;"><span class="n" style="color:#fff">300</span></div>
+        <div class="chip dark" style="background:#d44a7c;"><span class="n">400</span></div>
+        <div class="chip dark tag" data-tag="●" style="background:#b42460;"><span class="n">500</span><span class="h">#b42460</span></div>
+        <div class="chip dark" style="background:#951a4f;"><span class="n">600</span></div>
+        <div class="chip dark" style="background:#74143e;"><span class="n">700</span></div>
+        <div class="chip dark" style="background:#560f2d;"><span class="n">800</span></div>
+        <div class="chip dark" style="background:#3a0a1f;"><span class="n">900</span></div>
+        <div class="chip dark" style="background:#b42460; opacity:0;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Coral — secondary accent</div>
+      <div class="scale" style="grid-template-columns:repeat(5,1fr);">
+        <div class="chip dark" style="background:#fff1ec;"><span class="n" style="color:var(--ink-800)">50</span></div>
+        <div class="chip dark" style="background:#ffb89d;"><span class="n" style="color:var(--ink-800)">200</span></div>
+        <div class="chip dark" style="background:#fc9472;"><span class="n" style="color:var(--ink-800)">300</span></div>
+        <div class="chip dark tag" data-tag="●" style="background:#f06c48;"><span class="n">400</span><span class="h">#f06c48</span></div>
+        <div class="chip dark" style="background:#db4f29;"><span class="n">500</span></div>
+        <div class="chip dark" style="background:#b53e1f;"><span class="n">600</span></div>
+        <div class="chip dark" style="background:#8c2f17;"><span class="n">700</span></div>
+        <div class="chip dark" style="background:#602010;"><span class="n">800</span></div>
+        <div class="chip dark" style="background:#3d140a;"><span class="n">900</span></div>
+        <div class="chip dark" style="background:#f06c48; opacity:0;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:22px;">
+    <div class="section-label">Paper — warm cream backgrounds</div>
+    <div class="scale" style="grid-template-columns:repeat(6,1fr);">
+      <div class="chip light tag" data-tag="bg" style="background:#fffaf2;"><span class="n">50</span><span class="h">#fffaf2</span></div>
+      <div class="chip light" style="background:#fbf3e4;"><span class="n">100</span><span class="h">#fbf3e4</span></div>
+      <div class="chip light" style="background:#f5ead8;"><span class="n">200</span><span class="h">#f5ead8</span></div>
+      <div class="chip light" style="background:#ecdcc4;"><span class="n">300</span><span class="h">#ecdcc4</span></div>
+      <div class="chip light" style="background:#d9c6ac;"><span class="n">400</span><span class="h">#d9c6ac</span></div>
+      <div class="chip light" style="background:#b29c80;"><span class="n">500</span><span class="h">#b29c80</span></div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:18px;">Magenta and coral never sit directly adjacent in a way that vibrates. The <span class="mono">500</span> magenta and <span class="mono">400</span> coral are the canonical accents.</p>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Color · Scales</span></div>
+</section>
+
+<!-- ===================== PAGE 4 — SEMANTIC COLOR ===================== -->
+<section class="page" data-screen-label="Semantic color">
+  <div class="page-head">
+    <div><span class="eyebrow">Color</span><h2>Semantic tokens</h2></div>
+    <span class="page-num">04</span>
+  </div>
+
+  <div class="cols-2">
+    <div>
+      <div class="section-label">Light theme (default)</div>
+      <div class="semrow">
+        <div class="semcard"><div class="bar" style="background:#fffaf2; color:var(--ink-800);">--bg</div><div class="meta">paper-50</div></div>
+        <div class="semcard"><div class="bar" style="background:#ffffff; color:var(--ink-800);">--surface</div><div class="meta">#ffffff</div></div>
+        <div class="semcard"><div class="bar" style="background:#141d2b; color:#fff;">--fg-1</div><div class="meta">ink-900</div></div>
+        <div class="semcard"><div class="bar" style="background:#475066; color:#fff;">--fg-3</div><div class="meta">ink-500</div></div>
+        <div class="semcard"><div class="bar" style="background:#b42460; color:#fff;">--accent</div><div class="meta">magenta-500</div></div>
+        <div class="semcard"><div class="bar" style="background:#f06c48; color:#fff;">--accent-2</div><div class="meta">coral-400</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">Dark theme</div>
+      <div class="semrow">
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#0e1622; color:#fff;">--bg</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">ink-950</div></div>
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#141d2b; color:#fff;">--surface</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">ink-900</div></div>
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#fbf3e4; color:var(--ink-800);">--fg-1</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">paper-100</div></div>
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#98a0b3; color:var(--ink-900);">--fg-3</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">ink-300</div></div>
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#d44a7c; color:#fff;">--accent</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">magenta-400</div></div>
+        <div class="semcard" style="border-color:rgba(245,234,216,0.2);"><div class="bar" style="background:#fc9472; color:var(--ink-900);">--accent-2</div><div class="meta" style="background:#141d2b; color:var(--paper-300);">coral-300</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px;">
+    <div class="section-label">Status colors</div>
+    <div style="display:flex; gap:26px;">
+      <div class="swatch-line"><span class="dotcolor" style="background:#2f8a5a;"></span><span><strong>--success</strong> <span class="mono" style="color:var(--fg-3)">#2f8a5a</span></span></div>
+      <div class="swatch-line"><span class="dotcolor" style="background:#c98a14;"></span><span><strong>--warning</strong> <span class="mono" style="color:var(--fg-3)">#c98a14</span></span></div>
+      <div class="swatch-line"><span class="dotcolor" style="background:#b53e1f;"></span><span><strong>--danger</strong> <span class="mono" style="color:var(--fg-3)">#b53e1f</span></span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <div class="section-label">Borders &amp; focus</div>
+    <div class="cols-2">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="height:30px; border-radius:6px; border:1px solid var(--border-1); display:flex; align-items:center; padding:0 11px; font-size:11px; color:var(--fg-2);" class="mono">--border-1 · 8% ink</div>
+        <div style="height:30px; border-radius:6px; border:1px solid var(--border-2); display:flex; align-items:center; padding:0 11px; font-size:11px; color:var(--fg-2);" class="mono">--border-2 · 14% ink</div>
+        <div style="height:30px; border-radius:6px; border:1px solid var(--border-3); display:flex; align-items:center; padding:0 11px; font-size:11px; color:var(--fg-2);" class="mono">--border-3 · 22% ink</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; border:1px dashed var(--border-2); border-radius:var(--r-md);">
+        <button class="btn btn-ghost" style="outline:2px solid var(--magenta-500); outline-offset:2px;">Focus ring · 2px</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Color · Semantic</span></div>
+</section>
+
+<!-- ===================== PAGE 5 — TYPE ===================== -->
+<section class="page" data-screen-label="Typography">
+  <div class="page-head">
+    <div><span class="eyebrow">Typography</span><h2>Type scale</h2></div>
+    <span class="page-num">05</span>
+  </div>
+
+  <div class="cols-2" style="grid-template-columns:1fr 1fr; gap:22px; margin-bottom:8px;">
+    <div class="demo-card"><div class="section-label" style="margin:0 0 4px;">Display</div><div style="font-family:var(--font-display); font-weight:700; font-size:40px; line-height:0.9; letter-spacing:-0.02em;">Montserrat</div><p class="note" style="margin:8px 0 0;">Bold 700 / Black 800. Hero, H1, H2. Tight tracking at large sizes; caps for poster moments.</p></div>
+    <div class="demo-card"><div class="section-label" style="margin:0 0 4px;">Body</div><div style="font-family:var(--font-body); font-weight:400; font-size:40px; line-height:1;">Mona Sans</div><p class="note" style="margin:8px 0 0;">Regular 400 / Medium 500. Variable width, defaults to standard. Excellent at small sizes.</p></div>
+  </div>
+
+  <div style="margin-top:14px;">
+    <div class="specimen">
+      <div class="label"><span class="role">Display</span><span class="spec">Montserrat Bold · clamp 56–128px · -0.025em</span></div>
+      <div class="sample" style="font-family:var(--font-display); font-weight:700; font-size:62px; letter-spacing:-0.025em;">Selected work</div>
+    </div>
+    <div class="specimen">
+      <div class="label"><span class="role">Heading 1</span><span class="spec">Montserrat Bold · 40–72px</span></div>
+      <div class="sample" style="font-family:var(--font-display); font-weight:700; font-size:44px; letter-spacing:-0.02em;">Designing systems that scale</div>
+    </div>
+    <div class="specimen">
+      <div class="label"><span class="role">Heading 3</span><span class="spec">Montserrat SemiBold · 28px</span></div>
+      <div class="sample" style="font-family:var(--font-display); font-weight:600; font-size:28px;">Turning complexity into clarity</div>
+    </div>
+    <div class="specimen">
+      <div class="label"><span class="role">Lead</span><span class="spec">Mona Sans · 20px · 1.5</span></div>
+      <div class="sample" style="font-family:var(--font-body); font-size:20px; color:var(--fg-2); line-height:1.4;">A few projects I've shipped recently, focused on data-heavy admin tools.</div>
+    </div>
+    <div class="specimen">
+      <div class="label"><span class="role">Body</span><span class="spec">Mona Sans · 17px · 1.6</span></div>
+      <div class="sample" style="font-family:var(--font-body); font-size:16px; color:var(--fg-1); line-height:1.6; max-width:92%;">Product Designer with a strong foundation in UX and design craft, specializing in turning complex, multi-stakeholder SaaS problems into clear, scalable, and accessible experiences.</div>
+    </div>
+    <div class="specimen">
+      <div class="label"><span class="role">Eyebrow</span><span class="spec">Mona Sans SemiBold · 12px · 0.14em · uppercase</span></div>
+      <div class="sample eyebrow" style="font-size:12px;">Brooklyn · 2024</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Typography</span></div>
+</section>
+
+<!-- ===================== PAGE 6 — SPACING / RADII / MOTION ===================== -->
+<section class="page" data-screen-label="Spacing & motion">
+  <div class="page-head">
+    <div><span class="eyebrow">Foundations</span><h2>Spacing, radii &amp; motion</h2></div>
+    <span class="page-num">06</span>
+  </div>
+
+  <div class="cols-2">
+    <div>
+      <div class="section-label">Spacing — 4px base</div>
+      <div class="spacing-row"><span class="tk">--s-1</span><span class="px">4px</span><span class="bar2" style="width:4px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-2</span><span class="px">8px</span><span class="bar2" style="width:8px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-3</span><span class="px">12px</span><span class="bar2" style="width:12px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-4</span><span class="px">16px</span><span class="bar2" style="width:16px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-6</span><span class="px">24px</span><span class="bar2" style="width:24px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-8</span><span class="px">32px</span><span class="bar2" style="width:32px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-12</span><span class="px">48px</span><span class="bar2" style="width:48px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-16</span><span class="px">64px</span><span class="bar2" style="width:64px;"></span></div>
+      <div class="spacing-row"><span class="tk">--s-20</span><span class="px">80px</span><span class="bar2" style="width:80px;"></span></div>
+      <p class="note" style="margin-top:12px;">Default section rhythm: <span class="mono">--s-20</span> (80px) desktop, <span class="mono">--s-12</span> (48px) mobile.</p>
+    </div>
+
+    <div>
+      <div class="section-label">Motion</div>
+      <div class="motion-bar"><span class="tk">--dur-1</span><span class="track"><span class="fill" style="width:18%;"></span></span><span class="ms">120ms</span></div>
+      <div class="motion-bar"><span class="tk">--dur-2</span><span class="track"><span class="fill" style="width:32%;"></span></span><span class="ms">200ms</span></div>
+      <div class="motion-bar"><span class="tk">--dur-3</span><span class="track"><span class="fill" style="width:52%;"></span></span><span class="ms">320ms</span></div>
+      <div class="motion-bar"><span class="tk">--dur-4</span><span class="track"><span class="fill" style="width:84%;"></span></span><span class="ms">520ms</span></div>
+      <p class="note" style="margin:12px 0 18px;">Default <span class="mono">200ms</span> · <span class="mono">ease-out</span> (0.2, 0.7, 0.2, 1). Hero entrances use <span class="mono">ease-spring</span>. No bouncing, no scroll-jacking.</p>
+
+      <div class="section-label">Shadows</div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;">
+        <div class="shadow-cell"><div class="box" style="box-shadow:var(--shadow-xs);"></div><span class="tk">--shadow-xs</span></div>
+        <div class="shadow-cell"><div class="box" style="box-shadow:var(--shadow-sm);"></div><span class="tk">--shadow-sm</span></div>
+        <div class="shadow-cell"><div class="box" style="box-shadow:var(--shadow-md);"></div><span class="tk">--shadow-md</span></div>
+        <div class="shadow-cell"><div class="box" style="box-shadow:var(--shadow-lg);"></div><span class="tk">--shadow-lg</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <div class="section-label">Radii</div>
+    <div class="radii-grid" style="grid-template-columns:repeat(6,1fr);">
+      <div class="radii-cell"><div class="box" style="border-radius:4px; height:60px;"></div><div class="tk">--r-xs</div><div class="px">4px</div></div>
+      <div class="radii-cell"><div class="box" style="border-radius:6px; height:60px;"></div><div class="tk">--r-sm</div><div class="px">6px</div></div>
+      <div class="radii-cell"><div class="box" style="border-radius:10px; height:60px;"></div><div class="tk">--r-md</div><div class="px">10px</div></div>
+      <div class="radii-cell"><div class="box" style="border-radius:16px; height:60px;"></div><div class="tk">--r-lg</div><div class="px">16px</div></div>
+      <div class="radii-cell"><div class="box" style="border-radius:24px; height:60px;"></div><div class="tk">--r-xl</div><div class="px">24px</div></div>
+      <div class="radii-cell"><div class="box" style="border-radius:999px; height:60px;"></div><div class="tk">--r-pill</div><div class="px">999px</div></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Spacing · Motion</span></div>
+</section>
+
+<!-- ===================== PAGE 7 — COMPONENTS ===================== -->
+<section class="page" data-screen-label="Components">
+  <div class="page-head">
+    <div><span class="eyebrow">Components</span><h2>Core UI</h2></div>
+    <span class="page-num">07</span>
+  </div>
+
+  <div class="cols-2">
+    <div class="stack" style="gap:22px;">
+      <div>
+        <div class="section-label">Buttons</div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+          <button class="btn btn-primary">Get in touch →</button>
+          <button class="btn btn-coral">View work</button>
+          <button class="btn btn-ghost">Secondary</button>
+          <button class="btn btn-soft">Soft</button>
+        </div>
+        <p class="note" style="margin-top:10px;">Hover shifts to the next-darker accent step — color change, not opacity. Press goes one step darker again.</p>
+      </div>
+
+      <div>
+        <div class="section-label">Tags &amp; badges</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="tag-badge" style="background:var(--magenta-50); color:var(--magenta-600);">Product design</span>
+          <span class="tag-badge" style="background:var(--coral-50); color:var(--coral-600);">UX</span>
+          <span class="tag-badge" style="background:var(--ink-800); color:var(--paper-100);">SaaS</span>
+          <span class="tag-badge" style="background:transparent; color:var(--fg-2); border:1px solid var(--border-3);">B2B</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Form input</div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <input class="demo-input" value="hello@gregbilyk.com" readonly />
+          <input class="demo-input focus" value="Focused field" readonly />
+        </div>
+      </div>
+    </div>
+
+    <div class="stack" style="gap:22px;">
+      <div>
+        <div class="section-label">Work card</div>
+        <div class="demo-card" style="padding:0; overflow:hidden;">
+          <div style="height:88px; background:linear-gradient(135deg, var(--ink-800), var(--magenta-700));"></div>
+          <div style="padding:14px 16px;">
+            <span class="eyebrow" style="color:var(--accent-2);">Case study · 2024</span>
+            <h4 style="margin:7px 0 4px; font-size:19px;">Admin tooling redesign</h4>
+            <p class="note" style="margin:0;">Simplifying a multi-stakeholder dashboard into a scalable pattern library.</p>
+            <div style="margin-top:11px; display:flex; gap:6px;">
+              <span class="tag-badge" style="background:var(--magenta-50); color:var(--magenta-600);">Systems</span>
+              <span class="tag-badge" style="background:var(--coral-50); color:var(--coral-600);">B2B</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Sticky nav</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; height:52px; padding:0 16px; border-radius:var(--r-md); background:rgba(255,250,242,0.72); border:1px solid var(--border-1); box-shadow:var(--shadow-xs);">
+          <span style="font-family:var(--font-display); font-weight:800; font-size:17px;">Greg Bilyk<span style="color:var(--accent);">.</span></span>
+          <div style="display:flex; gap:16px; font-size:13px; color:var(--fg-2);"><span>Work</span><span>About</span><span style="color:var(--accent); font-weight:600;">Contact</span></div>
+        </div>
+        <p class="note" style="margin-top:10px;">64px sticky chrome with a <span class="mono">blur(12px)</span> paper backdrop — the only element fixed to the viewport.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System</span><span>Components</span></div>
+</section>
+
+<!-- ===================== PAGE 8 — VOICE ===================== -->
+<section class="page" data-screen-label="Voice">
+  <div class="page-head">
+    <div><span class="eyebrow">Content</span><h2>Voice &amp; copy</h2></div>
+    <span class="page-num">08</span>
+  </div>
+
+  <p class="lead" style="margin-top:0; max-width:92%;">First-person, conversational, professional. Greg writes as himself — confident but not boastful. The work does the bragging.</p>
+
+  <div style="margin:22px 0; display:flex; gap:10px; flex-wrap:wrap;">
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Clear</span>
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Considered</span>
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Structural</span>
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Grounded</span>
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Warm</span>
+    <span class="tag-badge" style="background:var(--surface-2); color:var(--fg-2);">Dry-witted</span>
+  </div>
+
+  <div class="do-dont">
+    <div class="cell do">
+      <div class="head">✓ Do</div>
+      <div class="row">"I design systems that hold up under pressure."</div>
+      <div class="row">"Six years building B2B SaaS — recently focused on data-heavy admin tools."</div>
+      <div class="row">"Selected work"</div>
+      <div class="row">"Get in touch →"</div>
+    </div>
+    <div class="cell dont">
+      <div class="head">✕ Don't</div>
+      <div class="row">"Designing kickass systems 🚀"</div>
+      <div class="row">"6+ years of crushing it in the SaaS space"</div>
+      <div class="row">"My Awesome Projects"</div>
+      <div class="row">"Let's connect!!"</div>
+    </div>
+  </div>
+
+  <div class="cols-2" style="margin-top:24px;">
+    <div>
+      <div class="section-label">Rules</div>
+      <ul class="note" style="margin:0; padding-left:18px; line-height:1.7;">
+        <li>Use <strong>"I"</strong>, never "Greg" or "we."</li>
+        <li>Sentence case for body, titles, nav, buttons.</li>
+        <li>ALL CAPS sparingly — hero &amp; dividers only.</li>
+        <li>Em dashes — with spaces. Oxford commas, yes.</li>
+        <li>Spell out one–nine; numerals from 10 up.</li>
+        <li>No emoji in product surfaces.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-label">Approved symbols</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="swatch-line"><span class="mono" style="font-size:18px; width:24px; color:var(--accent);">→</span><span class="note">Arrow — after CTA labels</span></div>
+        <div class="swatch-line"><span class="mono" style="font-size:18px; width:24px; color:var(--accent);">—</span><span class="note">Em dash — body copy</span></div>
+        <div class="swatch-line"><span class="mono" style="font-size:18px; width:24px; color:var(--accent);">·</span><span class="note">Middle dot — meta separators</span></div>
+      </div>
+      <div class="section-label" style="margin-top:18px;">Logo</div>
+      <div style="background:var(--ink-900); border-radius:var(--r-md); padding:16px 18px;">
+        <span style="font-family:var(--font-display); font-weight:800; font-size:24px; color:var(--paper-100);">Greg Bilyk<span style="color:var(--magenta-400);">.</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Greg Bilyk — Design System · Brooklyn palette</span><span>Voice</span></div>
+</section>
+
+</body>
+</html>
